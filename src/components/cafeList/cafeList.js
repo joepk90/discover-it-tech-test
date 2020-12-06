@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import CafeItem from "src/classes/cafeItem"
 import { getCafeItems } from 'src/services/konticoService';
 import Table from 'src/components/common/table';
 
@@ -10,17 +11,29 @@ class CafeList extends Component {
     }
 
 
+    mutateCafeItems(items) {
+
+        return items.map((item) => {
+
+            const cafeItem = new CafeItem(item);
+
+            return cafeItem.prepareCafeItemObject();
+
+        })
+
+    }
+
     async updateCafeItems() {
 
         try {
             const cafeListResponse = await getCafeItems();
 
-            if (!cafeListResponse.items) {
+            if (!cafeListResponse.data || !cafeListResponse.data.items) {
                 return;
             }
 
             this.setState({
-                cafeItems: cafeListResponse.items
+                cafeItems: this.mutateCafeItems(cafeListResponse.data.items)
             });
 
 
