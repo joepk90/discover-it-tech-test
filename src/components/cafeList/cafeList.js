@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { getCafeItems } from 'src/services/konticoService';
+import Table from 'src/components/common/table';
 
 class CafeList extends Component {
 
@@ -19,7 +20,7 @@ class CafeList extends Component {
             }
 
             this.setState({
-                invoiceList: cafeListResponse.items
+                cafeItems: cafeListResponse.items
             });
 
 
@@ -39,11 +40,24 @@ class CafeList extends Component {
 
     render() {
 
+
+        const columns = [
+            { path: 'name', label: 'Name' },
+            { path: 'email', label: 'Email' },
+            { path: 'phone_number', label: 'Phone Number' },
+            { path: 'city', label: 'City' },
+            { path: 'street', label: 'Street' },
+            { path: 'zip_code', label: 'Zip Code' },
+        ];
+
         const { cafeItems } = this.state;
 
         return (
             <div className="cafe-list">
-
+                <Table
+                    columns={columns}
+                    data={cafeItems}
+                />
             </div>
         );
     }
