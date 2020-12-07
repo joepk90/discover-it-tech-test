@@ -3,13 +3,19 @@ import React, { Component } from 'react';
 import CafeItem from "src/classes/cafeItem"
 import { getCafeItems } from 'src/services/konticoService';
 import Table from 'src/components/common/table';
+import _ from 'lodash';
 
 class CafeList extends Component {
 
     state = {
-        cafeItems: []
+        cafeItems: [],
+        sortColumn: { path: 'title', order: 'asc' },
     }
 
+    handleSort = sortColumn => {
+
+        this.setState({ sortColumn });
+    }
 
     mutateCafeItems(items) {
 
@@ -20,6 +26,14 @@ class CafeList extends Component {
             return cafeItem.prepareCafeItemObject();
 
         })
+
+    }
+
+    getSortedData = () => {
+
+        const { sortColumn, cafeItems: filtered } = this.state;
+
+        return _.orderBy(filtered, [sortColumn.path], [sortColumn.order])
 
     }
 
@@ -46,13 +60,12 @@ class CafeList extends Component {
     }
 
     async componentDidMount() {
-
         this.updateCafeItems();
-
     }
 
     render() {
 
+        const { sortColumn } = this.state;
 
         const columns = [
             { path: 'name', label: 'Name' },
@@ -63,13 +76,13 @@ class CafeList extends Component {
             { path: 'zip_code', label: 'Zip Code' },
         ];
 
-        const { cafeItems } = this.state;
-
         return (
             <div className="cafe-list">
                 <Table
                     columns={columns}
-                    data={cafeItems}
+                    sortColumn={sortColumn}
+                    data={this.getSortedData()}
+                    onSort={this.handleSort}
                 />
             </div>
         );
