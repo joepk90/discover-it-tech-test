@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.js": "/discover-it-tech-test/static/js/main.b54aa5b5.chunk.js",
+    "main.js.map": "/discover-it-tech-test/static/js/main.b54aa5b5.chunk.js.map",
+    "runtime-main.js": "/discover-it-tech-test/static/js/runtime-main.b8898b3d.js",
+    "runtime-main.js.map": "/discover-it-tech-test/static/js/runtime-main.b8898b3d.js.map",
+    "static/css/2.691b9b17.chunk.css": "/discover-it-tech-test/static/css/2.691b9b17.chunk.css",
+    "static/js/2.ff2e7fce.chunk.js": "/discover-it-tech-test/static/js/2.ff2e7fce.chunk.js",
+    "static/js/2.ff2e7fce.chunk.js.map": "/discover-it-tech-test/static/js/2.ff2e7fce.chunk.js.map",
+    "static/js/3.e7be7b43.chunk.js": "/discover-it-tech-test/static/js/3.e7be7b43.chunk.js",
+    "static/js/3.e7be7b43.chunk.js.map": "/discover-it-tech-test/static/js/3.e7be7b43.chunk.js.map",
+    "index.html": "/discover-it-tech-test/index.html",
+    "static/css/2.691b9b17.chunk.css.map": "/discover-it-tech-test/static/css/2.691b9b17.chunk.css.map",
+    "static/js/2.ff2e7fce.chunk.js.LICENSE.txt": "/discover-it-tech-test/static/js/2.ff2e7fce.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.css": "/discover-it-tech-test/static/media/fontawesome-webfont.f691f37e.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b8898b3d.js",
+    "static/css/2.691b9b17.chunk.css",
+    "static/js/2.ff2e7fce.chunk.js",
+    "static/js/main.b54aa5b5.chunk.js"
+  ]
+}
