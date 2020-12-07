@@ -17,13 +17,28 @@ class CafeList extends Component {
         this.setState({ sortColumn });
     }
 
+    // TODO should be in seperate file to handle the cafe item HTML
+    renderImageLink(photo) {
+
+        if (!photo) return '';
+
+        return (
+            <a href={photo} target="_blank">Image</a>
+        )
+
+    }
+
     mutateCafeItems(items) {
 
         return items.map((item) => {
 
             const cafeItem = new CafeItem(item);
 
-            return cafeItem.prepareCafeItemObject();
+            const cafeitemData = cafeItem.prepareCafeItemObject();
+
+            cafeitemData.image = this.renderImageLink(cafeitemData.image);
+
+            return cafeitemData;
 
         })
 
@@ -74,6 +89,7 @@ class CafeList extends Component {
             { path: 'city', label: 'City' },
             { path: 'street', label: 'Street' },
             { path: 'zip_code', label: 'Zip Code' },
+            { path: 'image', label: 'Image' },
         ];
 
         return (

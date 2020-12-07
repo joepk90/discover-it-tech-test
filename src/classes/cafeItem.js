@@ -50,6 +50,15 @@ class CafeItem {
 
     }
 
+    getPhoto() {
+
+        const photo = this.getElementItem('photo');
+
+        if (!photo[0]['url']) return;
+
+        return photo[0]['url'];
+    }
+
     prepareCafeItemObject() {
         return {
             "id": this.getId(),
@@ -59,6 +68,7 @@ class CafeItem {
             "city": this.getElementItem('city'),
             "street": this.getElementItem('street'),
             "zip_code": this.getElementItem('zip_code'),
+            "image": this.getPhoto(),
         }
     }
 
