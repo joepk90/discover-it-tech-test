@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "bootstrap": "^4.5.3",
+    "font-awesome": "^4.7.0",
     "lodash": "^4.17.20"
   }
 }
